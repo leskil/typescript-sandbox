@@ -1,0 +1,13 @@
+{
+    "typeRoots": [
+        "node_modules/@types",
+        "typedefs"
+    ],
+    "sourceMap": true,
+    "compileOnSave": false,
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "noEmit": false,
+        "strictNullChecks": true
+    }
+}
