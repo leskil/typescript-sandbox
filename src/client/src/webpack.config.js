@@ -7,7 +7,7 @@ module.exports = {
         path: Path.resolve(__dirname, "../assets")
     },
     devtool: "source-map",
-    watch: true,
+    watch: false,
     devServer: {
         contentBase: "./.."
     },
