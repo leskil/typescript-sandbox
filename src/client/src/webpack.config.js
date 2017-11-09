@@ -15,10 +15,7 @@ module.exports = {
         extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
         modules: [
             Path.join(__dirname, 'node_modules')
-            //"./node_modules/**"
-            //Path.resolve("./node_modules")
-        ]
-        //modulesDirectories: ["./node_modules"]
+        ]        
     },
     module: {
         rules: [

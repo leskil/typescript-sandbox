@@ -1,5 +1,8 @@
 export class HelloWorld {
-    SayHello(message: string): number {
-        return -1;
+    SayHello(name: string): string {
+        if (name == null)
+            throw new Error("name cannot be null")
+            
+        return "Hello " + name
     }
 }
