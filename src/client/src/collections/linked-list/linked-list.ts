@@ -1,7 +1,6 @@
 export class LinkedList<T> {
 
     first: ListNode<T>;
-
     count: number = 0;
 
     add(item: T, insertAfter?: ListNode<T>): void {
@@ -23,6 +22,49 @@ export class LinkedList<T> {
 
             this.insertAfter(node, lastNode);
         }
+    }
+
+    remove(node: ListNode<T>): void {
+        if (this.first == node) {
+            this.first = this.first.next
+            this.count--;
+            return;
+        } 
+
+        let previousNode = this.first;
+        let currentNode = this.first.next;
+
+        while (currentNode != null) {
+            if (node != currentNode) {
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+            } else {
+                previousNode.next = currentNode.next;
+                this.count--;
+                break;
+            }
+        }
+    }
+
+    elementAt(index: number): ListNode<T> {
+        if (index >= this.count)
+            throw this.indexOutOfBounds();
+
+        let i = 0;
+        let currentNode = this.first;
+
+        while (i <= index) {
+            if (currentNode == null)
+                throw this.indexOutOfBounds();
+
+            if (i == index)
+                return currentNode;
+
+            currentNode = currentNode.next;
+            i++;
+        }
+
+        throw this.indexOutOfBounds();
     }
 
     lastIndexOf(item: T): number {
@@ -62,6 +104,10 @@ export class LinkedList<T> {
         }
 
         return currentNode;
+    }
+
+    private indexOutOfBounds(): Error {
+        return new Error("Index out of bounds");
     }
 }
 
