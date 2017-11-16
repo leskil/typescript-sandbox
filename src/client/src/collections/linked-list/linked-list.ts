@@ -3,6 +3,18 @@ export class LinkedList<T> {
     first: ListNode<T>;
     count: number = 0;
 
+    addFirst(item: T): void {
+        let newNode = new ListNode<T>(item);
+        if (this.first == null) {
+            this.first = newNode;
+        } else {
+            newNode.next = this.first;
+            this.first = newNode;
+        }
+
+        this.count++;
+    }
+
     add(item: T, insertAfter?: ListNode<T>): void {
 
         this.count++;

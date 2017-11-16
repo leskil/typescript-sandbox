@@ -48,6 +48,16 @@ describe("Linked list", () => {
         assert.equal(subject.lastIndexOf(3), 3)
     });
 
+    it("Should be able to add a node as the first", () => {
+        let subject = new LinkedList<number>();
+        subject.add(1);
+        subject.add(2);
+        subject.add(3);
+        subject.addFirst(0);
+
+        assert.equal(subject.first.item, 0);
+    });
+
     it("Should be able to delete the only node in the list", () => {
         let subject = new LinkedList<number>();
         subject.add(1);
