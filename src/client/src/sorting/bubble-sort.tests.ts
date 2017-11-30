@@ -17,4 +17,11 @@ describe("Bubble sort", () => {
         assert.includeOrderedMembers(output, [1, 2, 2, 3, 4, 4, 5, 6, 7]);
     });
 
+    it("Should be able to sort a list of letters", () => {
+        let input = ["a", "c", "f", "h", "w", "b", "m"];
+        let output = BubbleSorter.sort(input);
+        
+        assert.includeOrderedMembers(output, ["a", "b", "c", "f", "h", "m", "w"])
+    });
+
 })
