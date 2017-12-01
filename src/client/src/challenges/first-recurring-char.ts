@@ -1,3 +1,7 @@
+/*
+*   Find the first recurring char of a string.
+*   For example, ABCDAB should return "A".
+*/
 export class FirstRecurringChar {
 
     /*
@@ -16,6 +20,9 @@ export class FirstRecurringChar {
         return null;
     }
 
+    /*
+    *   This is O(n)
+    */
     static faster(input: string): string | null {
 
         let index: Map = {};
