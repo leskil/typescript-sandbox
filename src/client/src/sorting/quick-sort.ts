@@ -1,4 +1,4 @@
-export class MergeSort {
+export class QuickSort {
 
     static sort<T>(arr: Array<T>): Array<T> {
         if (arr.length < 2) {
